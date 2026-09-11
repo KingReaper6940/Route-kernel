@@ -1,0 +1,26 @@
+name: CPU correctness
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  correctness:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m pip install -e .
+      - run: python -m unittest discover -s tests -v
+      - name: Compiled CPU correctness (Linux compiler)
+        if: runner.os == 'Linux'
+        env:
+          ROUTEKERNEL_TEST_COMPILED: '1'
+        run: python -m unittest discover -s tests -p test_compiled.py -v

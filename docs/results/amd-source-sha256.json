@@ -1,0 +1,18 @@
+{
+  "pyproject.toml": "2cc2e687c67d7b4e68d64e84fa39aebbf586068ecedc716b108658e691dc9a24",
+  "routekernel/__init__.py": "4f6f50e8184ae4c7fa3265c59da65a8342b894ca171ffdfea313d657d033abaf",
+  "routekernel/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+  "routekernel/benchmark.py": "73469c348d17e347c67a149ee43c1528c4fb7f4d30ce649ee272be927e77ba57",
+  "routekernel/cli.py": "1259a76402c6c9bba193d4dcd85bc216a1cbb8ed312fceb282cdc6e87039a6af",
+  "routekernel/execution_demo.py": "a97b09db394574582c3b72eb5be236fad2b86d81c6e83a0a8f2990e69494c145",
+  "routekernel/routing.py": "910f3677e0feb8f1766a817c3916d4348ba02c1e4049f8c12023dca34170d0fa",
+  "routekernel/routing_demo.py": "5a60bf2fe59e7ee84940c4efc46d3d0482a169db7bb382d92c44309314b573dc",
+  "routekernel/runtime.py": "5cd613ff6ee18530b0a8c69ae3f7a824a560e927fb1b9be572ec0151d747ed27",
+  "routekernel/shaders/gather.wgsl": "6a57e908a35a3fe57eb6bf321593de41959d90d241e69fb9aaa0c44c1fd2b8e0",
+  "routekernel/shaders/grouped_gemm.wgsl": "8c44472af0c330058826f6a510d5f20c96d38d54e8126861445f2c6b1201a38b",
+  "routekernel/shaders/merge.wgsl": "70a0d8507b195434eb6df45d557c85a62d140f6580007cbcbcb33b3a634f7f3c",
+  "routekernel/triton_backend.py": "1b23fe3c47a967205af05f5dd0cb6ceb000da8addb631199d2b017e5a17ed918",
+  "routekernel/wgpu_backend.py": "aa11722aba89db82c645c73dbe9eac71ba2bbcd9163c04e273b7c8ebb82fb429",
+  "routekernel/wgpu_benchmark.py": "ef3e46226fdd784e6d2225372c857633576497462f2f02031db33ab8dbcb7085",
+  "routekernel/workloads.py": "85f42c83febb74dae8899824a2de4804c36df9ce8e074c2943fed99ec8671d1e"
+}
