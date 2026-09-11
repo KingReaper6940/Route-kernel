@@ -18,7 +18,10 @@ def setup_commands(mode, python, env_dir, torch_version, cuda_wheel):
     if mode == 'reuse':
         create.append('--system-site-packages')
     create.append(str(env_dir))
-    commands = [create]
+    commands = []
+    if mode == 'reuse':
+        commands.append([python, str(ROOT / 'remote/check_cuda.py')])
+    commands.append(create)
     if mode == 'fresh':
         commands.append([env_python, '-m', 'pip', 'install', '--no-input',
                          f'torch=={torch_version}', '--index-url', f'https://download.pytorch.org/whl/{cuda_wheel}'])
@@ -51,12 +54,12 @@ def main(argv=None):
         parser.exit(1, 'Remote setup requires Linux. Use --dry-run to inspect the recipe locally.\n')
     if env_dir.exists():
         parser.exit(1, '.venv-remote already exists; reuse it or choose a fresh extraction directory.\n')
-    if args.mode == 'reuse':
-        # Check the image before creating anything or downloading packages.
-        subprocess.run([sys.executable, str(ROOT / 'remote' / 'check_cuda.py')], check=True)
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     log_dir = ROOT / 'remote-results' / ('setup-' + stamp)
     log_dir.mkdir(parents=True)
+    if args.mode == 'reuse':
+        # Preserve diagnostics even when the image fails before venv creation.
+        commands[0].extend(['--output', str(log_dir / 'preflight.json')])
     (log_dir / 'recipe.json').write_text(json.dumps(commands, indent=2) + '\n', encoding='utf-8')
     with (log_dir / 'setup.log').open('w', encoding='utf-8') as log:
         for command in commands:

@@ -15,10 +15,11 @@ def source_files(root=ROOT):
     paths = [root / name for name in ('README.md', 'LICENSE', 'pyproject.toml')]
     for folder, extensions in (
         ('routekernel', {'.py', '.wgsl'}), ('tests', {'.py'}),
-        ('remote', {'.py', '.json', '.txt'}),
+        ('remote', {'.py'}),
     ):
         paths.extend(p for p in (root / folder).rglob('*') if p.suffix in extensions)
     paths.append(root / 'docs' / 'remote-nvidia.md')
+    paths.append(root / 'remote' / 'suites.json')
     return sorted(p for p in paths if p.is_file() and not p.is_symlink()
                   and not any(part.startswith('.') or part == '__pycache__' for part in p.relative_to(root).parts)
                   and p.resolve().is_relative_to(root.resolve()))
@@ -56,7 +57,7 @@ def main(argv=None):
     except (OSError, ValueError) as exc:
         parser.exit(1, f'{exc}\nChoose a new output name to preserve an existing archive.\n')
     print(f'Packed {len(manifest)} current source files: {args.output}')
-    print('Excluded: environments, .git, credentials, caches, and previous benchmark results.')
+    print('Excluded: environments, .git, .env files, caches, and previous benchmark results.')
 
 
 if __name__ == '__main__':

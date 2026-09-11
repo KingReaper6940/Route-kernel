@@ -103,6 +103,8 @@ Learn the implementation in order:
 - [Day 2](docs/day-2.md): tensors, the reference, grouping, and merging.
 - [Day 3](docs/day-3.md): benchmarks, profiling, compilation, and GPU setup.
 - [AMD pivot](docs/amd-pivot.md): custom shader execution on the RX 6800.
+- [Remote NVIDIA harness](docs/remote-nvidia.md): bundle local source, check a
+  rental environment, gate benchmarks on correctness, and download results.
 
 The package is inference-only. Training, capacity limits, token dropping,
 distributed expert placement, and integration with pretrained models remain

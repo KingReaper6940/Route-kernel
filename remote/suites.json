@@ -1,0 +1,16 @@
+{
+  "smoke": [
+    {"name": "small-fp32", "tokens": 128, "experts": 8, "top_k": 2, "dim": 64, "hidden": 128, "distribution": "uniform", "dtype": "float32"},
+    {"name": "medium-fp16", "tokens": 512, "experts": 8, "top_k": 2, "dim": 256, "hidden": 512, "distribution": "uniform", "dtype": "float16"}
+  ],
+  "sweep": [
+    {"name": "t128-d256-uniform", "tokens": 128, "experts": 8, "top_k": 2, "dim": 256, "hidden": 512, "distribution": "uniform", "dtype": "float16"},
+    {"name": "t128-d256-skewed", "tokens": 128, "experts": 8, "top_k": 2, "dim": 256, "hidden": 512, "distribution": "skewed", "dtype": "float16"},
+    {"name": "t512-d256-uniform", "tokens": 512, "experts": 8, "top_k": 2, "dim": 256, "hidden": 512, "distribution": "uniform", "dtype": "float16"},
+    {"name": "t512-d256-skewed", "tokens": 512, "experts": 8, "top_k": 2, "dim": 256, "hidden": 512, "distribution": "skewed", "dtype": "float16"},
+    {"name": "t128-d512-uniform", "tokens": 128, "experts": 8, "top_k": 2, "dim": 512, "hidden": 1024, "distribution": "uniform", "dtype": "float16"},
+    {"name": "t128-d512-skewed", "tokens": 128, "experts": 8, "top_k": 2, "dim": 512, "hidden": 1024, "distribution": "skewed", "dtype": "float16"},
+    {"name": "t512-d512-uniform", "tokens": 512, "experts": 8, "top_k": 2, "dim": 512, "hidden": 1024, "distribution": "uniform", "dtype": "float16"},
+    {"name": "t512-d512-skewed", "tokens": 512, "experts": 8, "top_k": 2, "dim": 512, "hidden": 1024, "distribution": "skewed", "dtype": "float16"}
+  ]
+}
