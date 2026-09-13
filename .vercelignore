@@ -1,0 +1,14 @@
+.venv
+.venv-remote
+node_modules
+build
+dist
+site-dist
+remote-results
+benchmark_results
+traces
+playwright-report
+test-results
+*.egg-info
+**/__pycache__
+.env*

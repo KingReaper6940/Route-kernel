@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0c0f0d" />
+    <meta name="description" content="RouteKernel compiles sparse Mixture-of-Experts routes into GPU workloads. Explore the architecture, custom Triton kernels, and measured NVIDIA A40 results." />
+    <meta property="og:title" content="RouteKernel — Sparse routes. Dense performance." />
+    <meta property="og:description" content="An experimental GPU runtime. Two tested GPU paths. Reproducible results, down to the raw samples." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/social.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="RouteKernel: Sparse routes. Dense performance. An experimental GPU runtime." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>RouteKernel — Sparse routes. Dense performance.</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="nav-shell">
+      <nav class="nav wrap" aria-label="Main navigation">
+        <a class="brand" href="#" aria-label="RouteKernel home"><img src="/favicon.svg" width="30" height="30" alt="" />RouteKernel<span class="version">v1.0</span></a>
+        <div class="nav-links"><a href="#architecture">Architecture</a><a href="#benchmarks">Benchmarks</a><a href="#engineering">Engineering</a></div>
+        <a class="nav-source" href="https://github.com/KingReaper6940/Route-kernel" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> EXPERIMENTAL GPU RUNTIME</p>
+          <h1 id="hero-title">Sparse routes.<br /><span>Dense<br class="desktop-break" /> performance.</span></h1>
+          <p class="hero-description">Dynamic routing is messy.<br />GPU execution doesn’t have to be.</p>
+          <p class="hero-detail">RouteKernel turns Mixture-of-Experts token assignments into contiguous workloads, executed with custom GPU kernels.</p>
+          <div class="hero-actions"><a class="button primary" href="#benchmarks">Explore the results <span aria-hidden="true">↗</span></a><a class="text-link" href="#architecture">See how it works <span aria-hidden="true">↓</span></a></div>
+          <div class="stack-label">PYTHON <span>/</span> PYTORCH <span>/</span> TRITON <span>/</span> VULKAN</div>
+        </div>
+        <div class="hero-visual" aria-label="Illustration of token routes grouped into expert workloads">
+          <div class="visual-top"><span><i></i> ROUTE COMPILER</span><span>TOP-2 · 4 EXPERTS</span></div>
+          <div class="visual-grid" aria-hidden="true"></div>
+          <svg class="route-art" viewBox="0 0 590 510" aria-hidden="true">
+            <defs><linearGradient id="route-glow"><stop stop-color="#d1d7bc" stop-opacity=".12"/><stop offset="1" stop-color="#ff9565" stop-opacity=".9"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="3"/></filter></defs>
+            <g class="art-traces" fill="none" stroke="url(#route-glow)" stroke-width="1.4">
+              <path d="M50 94C165 94 120 190 250 190S340 110 415 110"/><path d="M50 132C150 132 170 235 250 235S345 230 415 230"/>
+              <path d="M50 170C160 170 160 280 250 280S345 350 415 350"/><path d="M50 208C150 208 185 190 250 190S345 110 415 110"/>
+              <path d="M50 246C150 246 170 325 250 325S345 410 415 410"/><path d="M50 284C140 284 190 235 250 235S345 230 415 230"/>
+              <path d="M50 322C150 322 170 190 250 190S345 110 415 110"/><path d="M50 360C160 360 175 280 250 280S345 350 415 350"/>
+              <path d="M50 398C160 398 170 235 250 235S345 230 415 230"/>
+            </g>
+            <g class="art-packets" fill="#ffc899"><circle r="3"><animateMotion dur="5s" repeatCount="indefinite" path="M50 94C165 94 120 190 250 190S340 110 415 110"/></circle><circle r="3"><animateMotion dur="5s" begin="-2s" repeatCount="indefinite" path="M50 284C140 284 190 235 250 235S345 230 415 230"/></circle><circle r="3"><animateMotion dur="6s" begin="-3s" repeatCount="indefinite" path="M50 360C160 360 175 280 250 280S345 350 415 350"/></circle></g>
+            <g fill="#101610" stroke="#56634c"><rect x="30" y="82" width="24" height="24" rx="5"/><rect x="30" y="120" width="24" height="24" rx="5"/><rect x="30" y="158" width="24" height="24" rx="5"/><rect x="30" y="196" width="24" height="24" rx="5"/><rect x="30" y="234" width="24" height="24" rx="5"/><rect x="30" y="272" width="24" height="24" rx="5"/><rect x="30" y="310" width="24" height="24" rx="5"/><rect x="30" y="348" width="24" height="24" rx="5"/><rect x="30" y="386" width="24" height="24" rx="5"/></g>
+            <g class="compiler-chip"><rect x="206" y="161" width="104" height="194" rx="12" fill="#101510" stroke="#677156"/><rect x="212" y="167" width="92" height="182" rx="8" fill="none" stroke="#283024"/><path d="M227 215h17l28 43h18M227 300h17l28-42M227 258h63" fill="none" stroke="#d1daae" stroke-width="3"/><text x="258" y="328" text-anchor="middle" fill="#8e9a83" font-size="9" font-family="monospace">COMPILE</text></g>
+            <g fill="#161b14" stroke="#445039"><rect x="410" y="80" width="148" height="61" rx="6"/><rect x="410" y="193" width="148" height="82" rx="6"/><rect x="410" y="321" width="148" height="61" rx="6"/><rect x="410" y="395" width="148" height="37" rx="6"/></g>
+            <g fill="#aabc85"><rect x="425" y="96" width="22" height="11" rx="2"/><rect x="452" y="96" width="22" height="11" rx="2"/><rect x="479" y="96" width="22" height="11" rx="2"/><rect x="425" y="114" width="22" height="11" rx="2"/><rect x="452" y="114" width="22" height="11" rx="2"/><rect x="425" y="337" width="22" height="11" rx="2"/><rect x="452" y="337" width="22" height="11" rx="2"/><rect x="479" y="337" width="22" height="11" rx="2"/><rect x="425" y="355" width="22" height="11" rx="2"/><rect x="425" y="408" width="22" height="11" rx="2"/><rect x="452" y="408" width="22" height="11" rx="2"/></g>
+            <g fill="#ff9565"><rect x="425" y="209" width="22" height="11" rx="2"/><rect x="452" y="209" width="22" height="11" rx="2"/><rect x="479" y="209" width="22" height="11" rx="2"/><rect x="506" y="209" width="22" height="11" rx="2"/><rect x="425" y="227" width="22" height="11" rx="2"/><rect x="452" y="227" width="22" height="11" rx="2"/><rect x="479" y="227" width="22" height="11" rx="2"/><rect x="506" y="227" width="22" height="11" rx="2"/><rect x="425" y="245" width="22" height="11" rx="2"/><rect x="452" y="245" width="22" height="11" rx="2"/></g>
+            <g fill="#7c8978" font-size="10" font-family="monospace"><text x="23" y="54">TOKENS</text><text x="211" y="130">ROUTED BATCH</text><text x="414" y="54">EXPERT WORKLOADS</text><text x="564" y="115">E0</text><text x="564" y="239">E1</text><text x="564" y="357">E2</text><text x="564" y="418">E3</text></g>
+          </svg>
+          <div class="visual-bottom"><span>SPARSE IN <span class="dash">────────</span> GROUPED OUT</span><span class="visual-caption">CONCEPTUAL VIEW</span></div>
+        </div>
+      </section>
+      <section class="proof-strip wrap" aria-label="Measured project highlights">
+        <div><strong id="headline-speedup">1.63<span>×</span></strong><p>Peak measured speedup<span>vs grouped PyTorch · A40 · FP16</span></p></div>
+        <div><strong id="headline-checks">96</strong><p>Numerical comparisons passed<span>FP32 · FP16 · BF16 on NVIDIA</span></p></div>
+        <div><strong>02</strong><p>GPU execution paths tested<span>NVIDIA A40 + AMD RX 6800</span></p></div>
+      </section>
+      <section id="architecture" class="section wrap">
+        <div class="section-heading"><div><p class="eyebrow">01 / THE ARCHITECTURE</p><h2>A little order.<br />A lot less scattered work.</h2></div><p>Each token chooses a few experts. We group those assignments, give every expert a contiguous batch, then put the weighted outputs back in order.</p></div>
+        <div class="pipeline"><article><span class="step-number">01</span><h3>Route</h3><p>Choose top-k experts and their contribution weights.</p><code>expert_ids · weights</code></article><article><span class="step-number">02</span><h3>Compile</h3><p>Stable-sort assignments and build expert offsets.</p><code>RoutedBatch</code></article><article><span class="step-number">03</span><h3>Execute</h3><p>Run grouped matrix operations on the GPU.</p><code>grouped GEMM × 2</code></article><article><span class="step-number">04</span><h3>Merge</h3><p>Weight expert outputs and reconstruct token order.</p><code>weighted sum → output</code></article></div>
+        <div class="routing-lab">
+          <div class="lab-header"><div><span class="live-label">INTERACTIVE EXPLAINER</span><h3>Follow the assignments.</h3></div><div class="lab-controls"><label class="select-label">Experts per token<select id="top-k"><option value="2">Top-2</option><option value="1">Top-1</option></select></label><div class="segmented" role="group" aria-label="Routing distribution"><button data-route="uniform" aria-pressed="true">Uniform</button><button data-route="skewed" aria-pressed="false">Skewed</button></div></div></div>
+          <div class="lab-body"><div class="token-column"><p class="mono mini-label">INPUT TOKENS <span>12 VECTORS</span></p><div id="tokens" class="tokens"></div></div><div class="lab-arrow" aria-hidden="true">→<span>GROUP BY<br />EXPERT ID</span></div><div class="expert-column"><p class="mono mini-label">COMPILED WORKLOAD <span id="assignment-count">24 ASSIGNMENTS</span></p><div id="experts" class="experts"></div></div></div>
+          <div class="lab-footer"><p id="route-description" aria-live="polite"></p><code id="offsets"></code></div>
+          <p class="lab-note">A deterministic browser simulation of grouping. No model or GPU inference runs here. Select a token to trace its expert assignments.</p>
+        </div>
+      </section>
+      <section id="benchmarks" class="section benchmark-section">
+        <div class="wrap">
+          <div class="section-heading"><div><p class="eyebrow">02 / MEASURED, NOT ESTIMATED</p><h2>The results.<br /><span class="muted">Including the regressions.</span></h2></div><p>One GPU. Identical inputs. Four backends.<br />Explore every workload in our first NVIDIA sweep, with raw samples one click away.</p></div>
+          <div class="benchmark-panel">
+            <div class="bench-toolbar"><span class="hardware-badge"><span class="status-dot"></span> NVIDIA A40 <span>48 GB</span></span><span class="mono bench-meta">FP16 · 8 EXPERTS · TOP-2</span><div class="segmented" role="group" aria-label="Latency statistic"><button data-metric="p50_ms" aria-pressed="true">Median p50</button><button data-metric="p95_ms" aria-pressed="false">Tail p95</button></div></div>
+            <div class="bench-content"><div class="bench-chart"><div class="chart-controls"><label class="select-label">Token count<select id="token-count"><option value="128">128 tokens</option><option value="512" selected>512 tokens</option></select></label><label class="select-label">Input / hidden size<select id="dimensions"><option value="256">256 / 512</option><option value="512">512 / 1024</option></select></label><label class="select-label">Routing<select id="distribution"><option value="uniform">Uniform</option><option value="skewed">Skewed</option></select></label></div><div class="chart-axis"><span id="chart-stat-label">MEDIAN LATENCY</span><span>MILLISECONDS · LOWER IS BETTER</span></div><div id="bar-chart" class="bars" aria-label="Backend latency comparison"></div><div class="chart-foot"><span>10 WARMUP CALLS / 30 SAMPLES</span><a id="raw-report" href="/evidence/t512-d256-uniform.json" download>Download raw JSON ↗</a></div></div><aside class="bench-insight" aria-live="polite"><span class="mono" id="comparison-label">VS GROUPED PYTORCH</span><strong id="selected-speedup">1.63<span>×</span></strong><p id="selected-insight"></p><div class="insight-rule"></div><span class="mono">ACROSS THE MEDIAN SWEEP</span><h3 id="sweep-wins">7 of 8</h3><p>cases had a lower Triton median.<br />One small skewed case was ~3% slower.</p><a href="/evidence/nvidia-a40.md" download>Read the full experiment ↗</a></aside></div>
+          </div>
+          <div class="method-note"><span class="note-icon">i</span><p><strong>Know what’s being measured.</strong> Synthetic, single-layer execution from supplied routes to merged outputs. Inputs and weights are already on the GPU. Routing scores, initial compilation, and host transfers are excluded. One session, one seed, fixed backend order. These are not full-LLM generation rates.</p><a href="#methodology">Methodology ↓</a></div>
+          <div class="amd-note"><span class="mono">ALSO RUNNING ON AMD</span><h3>Same question.<br />A different GPU path.</h3><p>The Radeon RX 6800 backend uses custom WGSL shaders through Vulkan: gather, tiled expert computation, and weighted merge. Its CPU-to-GPU request measurements have a different timing scope.</p><a class="text-link" href="https://github.com/KingReaper6940/Route-kernel/blob/main/docs/results/amd.md" target="_blank" rel="noopener noreferrer">Explore AMD results ↗</a></div>
+        </div>
+      </section>
+      <section id="engineering" class="section wrap">
+        <div class="section-heading"><div><p class="eyebrow">03 / UNDER THE HOOD</p><h2>Built to be inspected.</h2></div><p>The interesting part is the engineering.<br />The source, unsuccessful approaches, and measurement boundaries are all part of the project.</p></div>
+        <div class="engineering-grid"><article class="code-panel"><div class="code-header"><span><i></i><i></i><i></i></span><span>routekernel / routing.py</span></div><pre><code><span class="syntax-muted"># The intermediate representation</span>
+<span class="syntax-orange">class</span> <span class="syntax-light">RoutedBatch</span>:
+    expert_ids
+    token_ids
+    expert_offsets
+    routing_weights
+    permutation
+    inverse_permutation
+
+<span class="syntax-muted"># Sparse assignments become expert batches.</span>
+<span class="syntax-muted"># The inverse puts everything back.</span></code></pre><a href="https://github.com/KingReaper6940/Route-kernel/blob/main/routekernel/routing.py" target="_blank" rel="noopener noreferrer">Read the implementation <span>↗</span></a></article><div class="engineering-notes"><article><span class="mono">01 / CORRECTNESS FIRST</span><h3>A reference before a faster path.</h3><p>Every timed backend must match a token-by-token reference within recorded numerical tolerances. Unsupported paths fail explicitly.</p></article><article><span class="mono">02 / A USEFUL NEGATIVE RESULT</span><h3>Compilation wasn’t the shortcut.</h3><p>Compiling only expert arithmetic was slower than eager PyTorch in this sweep. Routing, Python dispatch, and merging still matter.</p></article><article><span class="mono">03 / THE NEXT QUESTION</span><h3>What does all that dispatch cost?</h3><p>The trace contains 29 GPU kernel events. Only two are our custom expert projections. The surrounding work deserves its own investigation.</p><a href="/evidence/profile.json" download>Download the profiler trace ↗</a></article></div></div>
+        <div id="methodology" class="methodology"><p class="eyebrow">RESEARCH NOTES</p><details open><summary>What is validated today?<span>+</span></summary><p>A synthetic, bias-free Linear → ReLU → Linear expert layer. Custom Triton execution on the NVIDIA A40 in FP32, FP16, and BF16; custom WGSL execution on the AMD RX 6800 in FP32. CPU references, a route compiler, a benchmark harness, and downloadable evidence. <a href="/evidence/correctness.json" download>Inspect all 96 NVIDIA comparisons.</a></p></details><details><summary>How fair is the benchmark?<span>+</span></summary><p>All four NVIDIA backends use identical GPU inputs and weights. CUDA is synchronized around each wall-clock sample. Initial compilation is outside timing. The fastest PyTorch variant is grouped PyTorch, so it is the headline comparison. Each workload has 30 samples, but this is one session with a fixed backend order—not a statistical claim across machines.</p></details><details><summary>Where does the project stop?<span>+</span></summary><p>This release is an experimental single-layer runtime. Pretrained-model integration, real-model routing traces, distributed experts, training, capacity limits, and full text generation are future work. The browser visualization is an explanation of grouping, not a live performance test.</p></details><details><summary>Can I reproduce the results?<span>+</span></summary><p>Yes. The repository includes the source bundle builder, GPU environment checks, a mandatory numerical gate, eight workload presets, and result archiving. The report records Python 3.12.3, PyTorch 2.8.0+cu128, Triton 3.4.0, and the A40 driver. <a href="https://github.com/KingReaper6940/Route-kernel/blob/main/docs/remote-nvidia.md" target="_blank" rel="noopener noreferrer">Follow the remote harness guide ↗</a></p></details></div>
+      </section>
+      <section id="get-started" class="get-started wrap"><div><p class="eyebrow">OPEN SOURCE / MIT LICENSE</p><h2>Follow the routes.<br /><span>Read the code.</span></h2><p>Start with the hand-checkable demo.<br />Then work your way down to the GPU.</p><a class="button primary" href="https://github.com/KingReaper6940/Route-kernel" target="_blank" rel="noopener noreferrer">Explore the repository ↗</a></div><div class="terminal"><div class="terminal-head"><span>QUICKSTART · CPU DEMO</span><button id="copy-command" aria-label="Copy quickstart commands">Copy <span aria-hidden="true">⧉</span></button></div><pre id="quickstart"><code>git clone https://github.com/KingReaper6940/Route-kernel.git
+cd Route-kernel
+python -m venv .venv
+<span class="syntax-muted"># macOS / Linux</span>
+source .venv/bin/activate
+python -m pip install -e .
+python -m routekernel demo</code></pre><div class="terminal-note">On Windows: <code>.venv\Scripts\Activate.ps1</code><br />Python 3.10+ · GPU dependencies are optional.</div><span id="copy-status" role="status"></span></div></section>
+    </main>
+    <footer class="wrap"><a class="brand" href="#"><img src="/favicon.svg" alt="" width="25" height="25" />RouteKernel</a><p>An experiment in making sparse work well.</p><div><a href="https://github.com/KingReaper6940/Route-kernel/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a><a href="https://github.com/KingReaper6940/Route-kernel" target="_blank" rel="noopener noreferrer">Source ↗</a></div></footer>
+    <noscript><div class="noscript-note">Enable JavaScript to use the routing simulation and benchmark selectors. The architecture and methodology remain available above.</div></noscript>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

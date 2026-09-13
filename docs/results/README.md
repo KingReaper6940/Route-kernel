@@ -1,7 +1,8 @@
 # Recorded CPU experiment — September 11, 2026
 
-This is the historical CPU-only snapshot. The subsequent AMD pivot has
-[separate GPU results](amd.md); the original measurements below are unchanged.
+This is the historical CPU-only snapshot. Subsequent GPU experiments have
+[AMD results](amd.md) and [NVIDIA A40 results](nvidia-a40.md); the original
+measurements below are unchanged.
 
 These are local, synthetic single-layer CPU measurements. They are not GPU
 results, full-model generation rates, or measurements of OLMoE.
@@ -79,5 +80,5 @@ consistency, the CLI, and Python syntax were checked locally.
 
 A Windows/Linux GitHub Actions workflow is included but has not been run on
 GitHub from this session. These were the checks at the time of this CPU-only
-snapshot. The AMD GPU path was subsequently validated; Triton validation and
-pretrained-model integration remain outstanding.
+snapshot. Both the AMD GPU path and Triton on NVIDIA A40 were subsequently
+validated in the linked reports. Pretrained-model integration remains outstanding.

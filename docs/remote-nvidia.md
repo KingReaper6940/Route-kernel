@@ -1,8 +1,11 @@
 # First NVIDIA rental: a reproducible RouteKernel experiment
 
-The harness is prepared locally. It has not yet run on NVIDIA hardware.
-Its CPU rehearsal verifies orchestration, logging, failure handling, and result
-packaging; it is explicitly not evidence that the Triton kernel works.
+The harness completed its first NVIDIA smoke run and eight-case sweep on an
+A40 on September 12, 2026. See the [recorded A40 results](results/nvidia-a40.md).
+The commands below use the initially recommended RTX 4090; set `--expect-gpu`
+to the actual rental's name (for example, `A40`). Its CPU rehearsal verifies
+orchestration, logging, failure handling, and packaging separately from GPU
+correctness.
 
 ## What we will rent
 

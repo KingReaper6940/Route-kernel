@@ -1,0 +1,10 @@
+RouteKernel | synthetic | cuda | float16
+512 tokens | 8 experts | top-2 | skewed
+Expert loads: [511, 512, 0, 0, 0, 0, 1, 0]
+Backend          p50 ms    p95 ms    input tok/s   vs PyTorch
+pytorch             0.827     0.914      618,847  1.00x
+grouped             0.606     0.621      844,194  1.36x
+torch-compiled      1.141     1.256      448,723  0.73x
+triton              0.559     0.576      916,721  1.48x
+Scope: supplied routes through merged output; router scoring and validation excluded.
+Saved report: /workspace/routekernel-remote/remote-results/a40-sweep/t512-d512-skewed.json

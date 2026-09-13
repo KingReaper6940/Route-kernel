@@ -18,3 +18,12 @@ dist/
 benchmark_results/
 traces/
 remote-results/
+
+# Showcase build and browser tests
+node_modules/
+site-dist/
+site/generated/
+site/public/evidence/
+playwright-report/
+test-results/
+.vercel/

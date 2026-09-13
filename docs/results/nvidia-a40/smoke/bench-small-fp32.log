@@ -1,0 +1,12 @@
+/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_fx.py:282: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+RouteKernel | synthetic | cuda | float32
+128 tokens | 8 experts | top-2 | uniform
+Expert loads: [31, 28, 40, 33, 28, 30, 38, 28]
+Backend          p50 ms    p95 ms    input tok/s   vs PyTorch
+pytorch             1.191     1.231      107,515  1.00x
+grouped             0.775     0.786      165,191  1.54x
+torch-compiled      1.505     1.534       85,078  0.79x
+triton              0.564     0.583      227,035  2.11x
+Scope: supplied routes through merged output; router scoring and validation excluded.
+Saved report: /workspace/routekernel-remote/remote-results/a40-smoke/small-fp32.json

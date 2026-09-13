@@ -1,0 +1,1362 @@
+{
+  "status": "passed",
+  "device": "cuda",
+  "reference_device": "cpu",
+  "cases": [
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 2.9802322387695312e-08
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 2.9802322387695312e-08
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 2.9802322387695312e-08
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 2.9802322387695312e-08
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 2.9802322387695312e-08
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 2.9802322387695312e-08
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 2.980232238769531e-07
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float32",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float32",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.000244140625
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.000244140625
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.000244140625
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.000244140625
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.00048828125
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.00048828125
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.00048828125
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.00048828125
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 5.960464477539063e-08
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 5.960464477539063e-08
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 5.960464477539063e-08
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.float16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 5.960464477539063e-08
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.float16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        0,
+        5,
+        2,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        7,
+        13
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.00018310546875
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.00018310546875
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.00018310546875
+    },
+    {
+      "shape": [
+        17,
+        5,
+        2,
+        37,
+        71
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.00018310546875
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "uniform",
+      "dtype": "torch.bfloat16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "pytorch",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "grouped",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "torch-compiled",
+      "status": "passed",
+      "max_abs_error": 0.0
+    },
+    {
+      "shape": [
+        65,
+        5,
+        5,
+        19,
+        33
+      ],
+      "distribution": "skewed",
+      "dtype": "torch.bfloat16",
+      "backend": "triton",
+      "status": "passed",
+      "max_abs_error": 0.0
+    }
+  ],
+  "backends": [
+    "pytorch",
+    "grouped",
+    "torch-compiled",
+    "triton"
+  ],
+  "dtypes": [
+    "torch.float32",
+    "torch.float16",
+    "torch.bfloat16"
+  ]
+}

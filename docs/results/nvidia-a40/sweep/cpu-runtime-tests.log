@@ -1,0 +1,12 @@
+test_does_not_mutate_inputs (test_runtime.RuntimeTests.test_does_not_mutate_inputs) ... ok
+test_empty_batch (test_runtime.RuntimeTests.test_empty_batch) ... ok
+test_hand_calculation (test_runtime.RuntimeTests.test_hand_calculation) ... ok
+test_invalid_dimensions_and_backend (test_runtime.RuntimeTests.test_invalid_dimensions_and_backend) ... ok
+test_low_precision (test_runtime.RuntimeTests.test_low_precision) ... ok
+test_noncontiguous_inputs_and_parameters (test_runtime.RuntimeTests.test_noncontiguous_inputs_and_parameters) ... ok
+test_randomized_shapes_routes_and_dtypes (test_runtime.RuntimeTests.test_randomized_shapes_routes_and_dtypes) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.173s
+
+OK

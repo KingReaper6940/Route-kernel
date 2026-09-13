@@ -1,0 +1,10 @@
+RouteKernel | synthetic | cuda | float16
+128 tokens | 8 experts | top-2 | uniform
+Expert loads: [24, 26, 45, 33, 29, 31, 34, 34]
+Backend          p50 ms    p95 ms    input tok/s   vs PyTorch
+pytorch             1.566     1.598       81,726  1.00x
+grouped             0.961     0.978      133,181  1.63x
+torch-compiled      1.733     1.767       73,844  0.90x
+triton              0.899     0.926      142,348  1.74x
+Scope: supplied routes through merged output; router scoring and validation excluded.
+Saved report: /workspace/routekernel-remote/remote-results/a40-sweep/t128-d512-uniform.json

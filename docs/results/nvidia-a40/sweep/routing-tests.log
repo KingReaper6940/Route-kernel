@@ -1,0 +1,13 @@
+test_empty_batch (test_routing.RoutingTests.test_empty_batch) ... ok
+test_hand_written_routes (test_routing.RoutingTests.test_hand_written_routes) ... ok
+test_invalid_routes (test_routing.RoutingTests.test_invalid_routes) ... ok
+test_inverse_restores_each_assignment_and_weight (test_routing.RoutingTests.test_inverse_restores_each_assignment_and_weight) ... ok
+test_linear_router_selects_and_normalizes (test_routing.RoutingTests.test_linear_router_selects_and_normalizes) ... ok
+test_merge_restores_tokens_and_preserves_unnormalized_weights (test_routing.RoutingTests.test_merge_restores_tokens_and_preserves_unnormalized_weights) ... ok
+test_noncontiguous_and_int32_routes (test_routing.RoutingTests.test_noncontiguous_and_int32_routes) ... ok
+test_unused_experts_have_empty_slices (test_routing.RoutingTests.test_unused_experts_have_empty_slices) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.026s
+
+OK

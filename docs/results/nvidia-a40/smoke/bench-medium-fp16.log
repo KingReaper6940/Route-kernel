@@ -1,0 +1,10 @@
+RouteKernel | synthetic | cuda | float16
+512 tokens | 8 experts | top-2 | uniform
+Expert loads: [104, 120, 153, 115, 139, 130, 126, 137]
+Backend          p50 ms    p95 ms    input tok/s   vs PyTorch
+pytorch             1.475     1.502      347,073  1.00x
+grouped             0.916     0.924      558,713  1.61x
+torch-compiled      1.774     1.956      288,544  0.83x
+triton              0.752     0.804      681,168  1.96x
+Scope: supplied routes through merged output; router scoring and validation excluded.
+Saved report: /workspace/routekernel-remote/remote-results/a40-smoke/medium-fp16.json
