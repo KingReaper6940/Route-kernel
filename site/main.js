@@ -3,7 +3,7 @@ import benchmarkData from './generated/benchmarks.json';
 import { routeTokens, comparison } from './lib/routing.mjs';
 
 const $ = selector => document.querySelector(selector);
-const colors = ['#c3d19a', '#ff9565', '#86b9b0', '#b6a2cf'];
+const colors = ['#d2c6b8', '#ff9565', '#aab5c5', '#b6a2cf'];
 let routingMode = 'uniform';
 let selectedToken = null;
 let metric = 'p50_ms';
